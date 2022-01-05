@@ -89,8 +89,8 @@ namespace ChefSharp
 
     public class Ingredient
     {
-        public int? Amount { get; init; }
-        public MeasureType MeasureType { get; init; } = MeasureType.Undefined;
+        public int? Amount { get; set; }
+        public MeasureType MeasureType { get; set; } = MeasureType.Undefined;
         public string Name { get; init; }
 
         public Ingredient Copy()
