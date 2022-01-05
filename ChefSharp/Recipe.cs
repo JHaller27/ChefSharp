@@ -38,6 +38,11 @@ namespace ChefSharp
             this.GetBowl(bowlId).Push(ingredient);
         }
 
+        public Ingredient PeekInBowl(int bowlId)
+        {
+            return this.GetBowl(bowlId).Peek();
+        }
+
         public Ingredient TakeFromBowl(int bowlId)
         {
             return this.GetBowl(bowlId).Pop();
