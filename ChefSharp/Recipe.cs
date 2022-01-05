@@ -53,15 +53,15 @@ namespace ChefSharp
         }
     }
 
-    public interface Cookable
+    public interface ICookable
     {
         public void Execute(Kitchen kitchen);
     }
 
-    public class Recipe : Cookable
+    public class Recipe : ICookable
     {
         public IEnumerable<Ingredient> Ingredients { get; }
-        public IEnumerable<Cookable> Instructions { get; }
+        public IEnumerable<ICookable> Instructions { get; }
         public int Serves { get; }
 
         public void Execute(Kitchen kitchen)
@@ -73,7 +73,7 @@ namespace ChefSharp
             }
 
             // Execute recipe instructions
-            foreach (Cookable instruction in this.Instructions)
+            foreach (ICookable instruction in this.Instructions)
             {
                 instruction.Execute(kitchen);
             }
